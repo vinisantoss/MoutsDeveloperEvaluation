@@ -1,11 +1,11 @@
 ﻿using Ambev.DeveloperEvaluation.Application.Sales.Common;
 
-namespace Ambev.DeveloperEvaluation.Application.Sales.SaleCreated;
+namespace Ambev.DeveloperEvaluation.Application.Sales.SaleModified;
 
 /// <summary>
-/// Represents the response after creating a commercial sale
+/// Represents the response after modified a sale
 /// </summary>
-public class CreateSaleResult
+public sealed class SaleModifiedResult
 {
     /// <summary>
     /// Gets or sets the sale's unique identifier
@@ -23,17 +23,17 @@ public class CreateSaleResult
     public DateTime SaleDate { get; set; }
 
     /// <summary>
-    /// Gets or sets the Customer information
+    /// Gets or sets the customerr information
     /// </summary>
-    public CustomerResult Customer { get; set; } = new();
+    public CustomerResult CustomerResult { get; set; } = new();
 
     /// <summary>
     /// Gets or sets the branch information
     /// </summary>
-    public BranchResult Branch { get; set; } = new();
+    public BranchResult BranchResult { get; set; } = new();
 
     /// <summary>
-    /// Gets or sets the grand total amount of the sale
+    /// Gets or sets the total amount of the sale
     /// </summary>
     public decimal TotalAmount { get; set; }
 
@@ -51,4 +51,9 @@ public class CreateSaleResult
     /// Gets or sets when the transaction was created
     /// </summary>
     public DateTime CreatedAt { get; set; }
+
+    /// <summary>
+    /// Gets or sets when the transaction was last updated
+    /// </summary>
+    public DateTime? UpdatedAt { get; set; }
 }

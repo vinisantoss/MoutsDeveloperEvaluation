@@ -2,25 +2,24 @@
 using Ambev.DeveloperEvaluation.Domain.Entities;
 using AutoMapper;
 
-namespace Ambev.DeveloperEvaluation.Application.Sales.SaleCreated;
+namespace Ambev.DeveloperEvaluation.Application.Sales.GetSale;
 
 /// <summary>
-/// AutoMapper profile for sale operation mappings
+/// AutoMapper profile for GetSale operation mappings
 /// </summary>
-public class CreateSaleProfile : Profile
+public class GetSaleProfile : Profile
 {
     /// <summary>
-    /// Initializes the mappings for CreateSale
+    /// Initializes the mappings for GetSale
     /// </summary>
-    public CreateSaleProfile()
+    public GetSaleProfile()
     {
-        CreateMap<Sale, CreateSaleResult>()
-        .ForMember(dest => dest.SaleStatus, opt => opt.MapFrom(src => src.Status.ToString()));
+        CreateMap<Sale, GetSaleResult>()
+       .ForMember(dest => dest.SaleStatus, opt => opt.MapFrom(src => src.Status.ToString()));
 
         CreateMap<Customer, CustomerResult>();
         CreateMap<Branch, BranchResult>();
         CreateMap<SaleItem, SaleItemResult>();
         CreateMap<Product, ProductResult>();
     }
-   
 }

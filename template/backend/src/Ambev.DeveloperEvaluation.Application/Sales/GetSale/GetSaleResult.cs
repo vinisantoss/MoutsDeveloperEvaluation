@@ -1,11 +1,11 @@
 ﻿using Ambev.DeveloperEvaluation.Application.Sales.Common;
 
-namespace Ambev.DeveloperEvaluation.Application.Sales.SaleCreated;
+namespace Ambev.DeveloperEvaluation.Application.Sales.GetSale;
 
 /// <summary>
-/// Represents the response after creating a commercial sale
+/// Represents the response after retrieving a sale
 /// </summary>
-public class CreateSaleResult
+public class GetSaleResult
 {
     /// <summary>
     /// Gets or sets the sale's unique identifier
@@ -23,7 +23,7 @@ public class CreateSaleResult
     public DateTime SaleDate { get; set; }
 
     /// <summary>
-    /// Gets or sets the Customer information
+    /// Gets or sets the customer information
     /// </summary>
     public CustomerResult Customer { get; set; } = new();
 
@@ -43,12 +43,17 @@ public class CreateSaleResult
     public string SaleStatus { get; set; } = string.Empty;
 
     /// <summary>
-    /// Gets or sets the list of items in the transaction
+    /// Gets or sets the list of items in the sale
     /// </summary>
     public List<SaleItemResult> Items { get; set; } = new();
 
     /// <summary>
-    /// Gets or sets when the transaction was created
+    /// Gets or sets when the sale was created
     /// </summary>
     public DateTime CreatedAt { get; set; }
+
+    /// <summary>
+    /// Gets or sets when the sale was last updated
+    /// </summary>
+    public DateTime? UpdatedAt { get; set; }
 }
