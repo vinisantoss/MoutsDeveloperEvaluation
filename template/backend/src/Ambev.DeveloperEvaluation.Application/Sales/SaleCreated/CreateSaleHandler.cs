@@ -94,7 +94,7 @@ public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, CreateSaleRe
             var product = await _productRepository.GetByExternalIdAsync(itemInfo.Product.ExternalId, cancellationToken);
             if (product is null)
             {
-                throw new DomainException($"Produto com ExternalId '{itemInfo.Product.ExternalId}' não encontrado.");
+                throw new DomainException($"Product with ExternalId '{itemInfo.Product.ExternalId}' not found.");
             }
 
             sale.AddItem(product.Id, itemInfo.Quantity, itemInfo.ItemPrice);

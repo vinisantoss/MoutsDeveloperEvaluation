@@ -67,6 +67,7 @@ public class SaleItem : BaseEntity
     {
         var item = new SaleItem
         {
+            Id = Guid.NewGuid(),
             ProductId = productId,
             Quantity = quantity,
             ItemPrice = itemPrice,

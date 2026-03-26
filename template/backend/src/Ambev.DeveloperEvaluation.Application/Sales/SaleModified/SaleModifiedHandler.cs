@@ -89,6 +89,7 @@ public class SaleModifiedHandler : IRequestHandler<SaleModifiedCommand, SaleModi
 
         var product = new Product
         {
+            Id = Guid.NewGuid(),
             ExternalId = saleItem.Product.ExternalId,
             Name = saleItem.Product.Name,
             Category = saleItem.Product.Category,
